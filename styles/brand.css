@@ -1,0 +1,52 @@
+:root {
+  /* AstraZeneca palette */
+  --color-az-mulberry: #830051;
+  --color-az-plum: #4f0031;
+  --color-az-magenta: #d0006f;
+  --color-az-slate: #3c4242;
+  --color-az-mist: #ebefee;
+  --color-az-border: #d8dfde;
+
+  /* named colors */
+  --color-text: light-dark(var(--color-az-slate), var(--color-gray-100));
+  --color-heading: light-dark(var(--color-az-mulberry), var(--color-magenta-300));
+  --color-link: var(--color-text);
+  --color-link-hover: light-dark(var(--color-az-magenta), var(--color-magenta-300));
+  --color-brand: var(--color-az-mulberry);
+  --color-accent: var(--color-az-magenta);
+  --color-shaded: light-dark(var(--color-az-mist), #1f2323);
+
+  /* fonts */
+  --font-family: inter, arial, sans-serif;
+  --heading-font-family: lexia, georgia, serif;
+
+  /* headings (mobile, desktop sizes at 900px) */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 28px;
+  --heading-font-size-l: 26px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+  --heading-line-height: 1.15;
+
+  /* body */
+  --body-line-height: 1.5;
+
+  /* layout */
+  --grid-container-width: min(1180px, calc(100% - 32px));
+  --section-spacing: 20px;
+  --border-radius-s: 4px;
+  --border-radius-m: 8px;
+}
+
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xxl: 56px;
+    --heading-font-size-xl: 46px;
+    --heading-font-size-l: 36px;
+    --heading-font-size-m: 26px;
+    --heading-font-size-s: 20px;
+    --heading-font-size-xs: 18px;
+    --section-spacing: 40px;
+  }
+}

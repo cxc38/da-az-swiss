@@ -1,87 +1,75 @@
-/* Columns Teaser - structural styles only (brand styling is applied by the design pass) */
 .columns-teaser {
-  --columns-teaser-gap: var(--spacing-l);
-
   display: grid;
-  gap: var(--spacing-xxl);
-  max-width: var(--grid-container-width);
-  margin: 0 auto;
+  gap: var(--section-spacing);
 
   .columns-teaser-row {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--columns-teaser-gap);
   }
 
   .columns-teaser-text {
     display: flex;
     flex-direction: column;
+    padding: 24px 16px;
+    text-align: center;
 
-    > *:first-child {
-      margin-top: 0;
+    p {
+      margin: 0;
     }
 
-    > *:last-child {
-      margin-bottom: 0;
+    .columns-teaser-cta {
+      margin-top: auto;
+      padding-top: 16px;
     }
-  }
 
-  .columns-teaser-cta {
-    margin-top: var(--spacing-l);
-
-    &.btn-group {
+    .btn-group {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: var(--spacing-s);
     }
   }
 
   .columns-teaser-image {
+    order: -1;
     line-height: 0;
 
     picture {
       display: block;
-      height: 100%;
     }
 
     img {
       display: block;
-      width: 100%;
-      height: 100%;
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 16 / 10;
       object-fit: cover;
     }
   }
 }
 
-@media (width >= 600px) {
-  .columns-teaser .columns-teaser-image img {
-    aspect-ratio: 16 / 9;
-  }
-}
-
-@media (width >= 900px) {
+@media (width >= 768px) {
   .columns-teaser {
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+
     .columns-teaser-row {
       grid-template-columns: repeat(var(--columns-teaser-count, 2), 1fr);
-      align-items: stretch;
+      gap: 30px;
     }
 
-    /* Push the CTA to the bottom of the text column so it aligns with the image's bottom edge. */
-    .columns-teaser-cta {
-      margin-top: auto;
-      padding-top: var(--spacing-l);
+    .columns-teaser-text {
+      padding: 0;
+      text-align: start;
+
+      .btn-group {
+        justify-content: start;
+      }
     }
 
-    .columns-teaser-image img {
-      aspect-ratio: auto;
-      min-height: 280px;
-    }
-  }
-}
+    .columns-teaser-image {
+      order: 0;
 
-@media (width >= 1200px) {
-  .columns-teaser .columns-teaser-row {
-    --columns-teaser-gap: var(--spacing-xl);
+      img {
+        aspect-ratio: auto;
+      }
+    }
   }
 }

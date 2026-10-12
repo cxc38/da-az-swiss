@@ -1,37 +1,11 @@
+@import url('brand.css');
+
 @font-face {
-  font-family: Montserrat;
+  font-family: Inter;
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("/styles/fonts/montserrat.woff2") format("woff2");
-  unicode-range:
-    U+0000-00FF,
-    U+0131,
-    U+0152-0153,
-    U+02BB-02BC,
-    U+02C6,
-    U+02DA,
-    U+02DC,
-    U+0304,
-    U+0308,
-    U+0329,
-    U+2000-206F,
-    U+20AC,
-    U+2122,
-    U+2191,
-    U+2193,
-    U+2212,
-    U+2215,
-    U+FEFF,
-    U+FFFD;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/styles/fonts/montserrat-italic.woff2") format("woff2");
+  src: url("/styles/fonts/inter.woff2") format("woff2");
   unicode-range:
     U+0000-00FF,
     U+0131,
@@ -56,7 +30,6 @@
 
 :root {
   /* grid */
-  --grid-container-width: 83.4%;
   --grid-column-width: calc(var(--grid-container-width) / 12);
   --grid-gutter-width: 8.3%;
 
@@ -159,24 +132,7 @@
   --color-dark-base: 0 0 0;
   --color-light: rgb(255 255 255);
   --color-dark: rgb(0 0 0);
-  --color-text: light-dark(var(--color-dark), var(--color-light));
-  --color-link: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --color-brand: var(--color-purple-500);
-  --color-accent: light-dark(var(--color-magenta-600), var(--color-magenta-500));
   --color-background: light-dark(var(--color-light), var(--color-dark));
-  --color-shaded: light-dark(#f9f9f9, #111);
-
-  /* fonts */
-  --font-family: montserrat, "Trebuchet MS", sans-serif;
-
-  /* headings */
-  --heading-font-size-xxl: 32.44px;
-  --heading-font-size-xl: 28.83px;
-  --heading-font-size-l: 25.63px;
-  --heading-font-size-m: 22.78px;
-  --heading-font-size-s: 20.25px;
-  --heading-font-size-xs: 18px;
-  --heading-line-height: 1.15;
 
   /* body */
   --body-font-size-xxxl: 25px;
@@ -186,7 +142,6 @@
   --body-font-size-m: 16px;
   --body-font-size-s: 14px;
   --body-font-size-xs: 12px;
-  --body-line-height: 1.6;
 
   /* misc */
   --header-height: 64px;
@@ -209,14 +164,18 @@ body {
   margin: 0;
   background-color: var(--color-background);
   color: var(--color-text);
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: arial, sans-serif;
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height);
   padding: var(--header-height) 0 0;
 
+  --heading-font: georgia, serif;
+
   &.session {
     /* only allow font loading if a session */
     font-family: var(--font-family);
+
+    --heading-font: var(--heading-font-family);
   }
 
   &.has-breadcrumb {
@@ -238,56 +197,84 @@ header {
 
 a {
   color: var(--color-link);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
 
   &.btn {
     display: inline-block;
-    line-height: 1;
-    font-weight: 500;
+    line-height: 24px;
+    font-weight: 700;
     text-decoration: none;
-    border: 2px solid;
-    padding: 8px 12px;
+    border: 1px solid;
+    border-radius: var(--border-radius-s);
+    padding: 8px 16px;
     box-sizing: border-box;
 
     &.btn-outline {
       background: transparent;
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
   }
 
   &.btn-accent {
     color: #fff;
-    background: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+
+    &:hover {
+      background: var(--color-az-plum);
+      border-color: var(--color-az-plum);
+    }
 
     &.btn-outline {
-      color: var(--color-accent);
+      color: var(--color-brand);
+      background: transparent;
     }
   }
 
   &.btn-primary {
-    color: var(--color-background);
-    background-color: var(--color-text);
-    border: 2px solid var(--color-text);
+    color: #fff;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+
+    &:hover {
+      background-color: var(--color-brand);
+      border-color: var(--color-brand);
+    }
 
     &.btn-outline {
       color: var(--color-text);
+      border-color: var(--color-text);
       background: transparent;
     }
   }
 
   &.btn-secondary {
-    color: var(--color-background);
-    background-color: var(--color-gray-500);
-    border: 2px solid var(--color-gray-500);
+    color: var(--color-accent);
+    background-color: var(--color-background);
+    border-color: var(--color-accent);
+
+    &:hover {
+      color: #fff;
+      background-color: var(--color-accent);
+    }
 
     &.btn-outline {
-      color: var(--color-gray-500);
+      background: transparent;
     }
   }
 
   &.btn-negative {
     color: #fff;
     background-color: var(--color-red-600);
-    border: 2px solid var(--color-red-600);
+    border-color: var(--color-red-600);
 
     &.btn-outline {
       color: var(--color-red-600);
@@ -309,6 +296,33 @@ a {
   > .default-content {
     max-width: var(--grid-container-width);
     margin: 0 auto;
+  }
+}
+
+main > .section {
+  + .section {
+    padding-block-start: var(--section-spacing);
+  }
+
+  > .default-content + .block-content {
+    margin-block-start: var(--section-spacing);
+  }
+
+  > .block-content + .default-content {
+    margin-block-start: calc(var(--section-spacing) * 2);
+  }
+
+  > .default-content > * + :is(h2, h3) {
+    margin-block-start: calc(1em + var(--section-spacing));
+  }
+
+  /* AZ job code / revision line */
+  &.revision > .default-content {
+    padding-block-end: var(--section-spacing);
+
+    @media (width >= 900px) {
+      text-align: end;
+    }
   }
 }
 
@@ -339,8 +353,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-family: var(--heading-font);
+  font-weight: 400;
   line-height: var(--heading-line-height);
+  color: var(--color-heading);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -376,12 +392,6 @@ svg {
 /* @media (width >= 900px) {} */
 
 /* @media (width >= 1200px) {} */
-
-@media (width >= 1440px) {
-  :root {
-    --grid-container-width: 1200px;
-  }
-}
 
 main > div,
 .has-template,

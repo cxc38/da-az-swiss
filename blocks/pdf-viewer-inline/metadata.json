@@ -1,0 +1,25 @@
+{
+  "variantName": "pdf-viewer-inline",
+  "baseBlock": "pdf-viewer",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "document-viewer",
+    "imagePattern": "none",
+    "structure": "single embedded PDF document"
+  },
+  "contentPattern": "single link to a .pdf file which is rendered as an inline document viewer with a download link",
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.myastrazeneca.ch/it/startseite/produkte/wainzua/brochure.html",
+        "instanceId": null,
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1
+  },
+  "options": [],
+  "memberVariantIds": ["pdf-viewer-inline"]
+}
