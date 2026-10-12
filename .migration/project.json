@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "da-az-swiss": {
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+      "previewOrg": "cxc38",
+      "previewSite": "da-az-swiss",
+      "contentHostUrl": "https://content.da.live/cxc38/da-az-swiss/"
+    }
+  }
+}

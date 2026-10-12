@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.myastrazeneca.ch/",
+  "path": "home",
+  "timestamp": "2026-10-12T09:37:13.410Z",
+  "title": "Startseite | MyAstraZeneca",
+  "template": "home",
+  "blocks": [
+    "hero-banner",
+    "cards-therapy",
+    "columns-teaser"
+  ]
+}

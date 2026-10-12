@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-banner",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "page-intro-banner",
+    "imagePattern": "background",
+    "structure": "background image + h1 + paragraph",
+    "isFullWidth": true,
+    "position": "top"
+  },
+  "contentPattern": {
+    "structure": "row 1: background image; row 2: h1 heading + short paragraph (no CTA)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.myastrazeneca.ch/",
+        "instanceId": null,
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1
+  },
+  "options": [],
+  "memberVariantIds": ["hero-banner"]
+}

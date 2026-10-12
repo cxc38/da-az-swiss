@@ -1,0 +1,33 @@
+{
+  "variantName": "columns-teaser",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "purpose": "product-teaser",
+    "imagePattern": "large",
+    "structure": "paragraphs + button | image",
+    "hasGrid": true,
+    "position": "middle",
+    "split": "50/50",
+    "imagePosition": "right"
+  },
+  "contentPattern": {
+    "structure": "one row, 2 cells: cell 1 text paragraphs + link (button, pinned to bottom), cell 2 large image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.myastrazeneca.ch/",
+        "instanceId": null,
+        "screenshot": "migration-work/teaser-text-image.png"
+      }
+    ],
+    "reuseCount": 1
+  },
+  "options": [],
+  "memberVariantIds": ["columns-teaser"]
+}

@@ -1,0 +1,84 @@
+/* Hero Banner - structural styles only (brand styling is applied by the design pass) */
+.hero-banner {
+  --hero-banner-min-height: 200px;
+
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  min-height: var(--hero-banner-min-height);
+
+  .hero-banner-background {
+    position: absolute;
+    inset: 0;
+
+    > div,
+    picture {
+      position: absolute;
+      inset: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .hero-banner-foreground {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: var(--grid-container-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+  }
+
+  .hero-banner-content {
+    max-width: 100%;
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .hero-banner-heading {
+    margin: 0 0 var(--spacing-m);
+  }
+}
+
+@media (width >= 600px) {
+  .hero-banner {
+    --hero-banner-min-height: 220px;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-banner {
+    --hero-banner-min-height: 240px;
+
+    .hero-banner-foreground {
+      padding: var(--spacing-xxl) 0;
+    }
+
+    .hero-banner-content p {
+      max-width: 60%;
+    }
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-banner .hero-banner-content p {
+    max-width: 45%;
+  }
+}

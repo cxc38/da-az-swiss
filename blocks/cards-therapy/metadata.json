@@ -1,0 +1,35 @@
+{
+  "variantName": "cards-therapy",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "purpose": "therapy-area-overview",
+    "imagePattern": "multiple",
+    "structure": "image + heading + paragraphs + link list",
+    "hasGrid": true,
+    "position": "middle",
+    "columns": 3,
+    "alignment": "center",
+    "radius": "8px",
+    "background": "light-grey"
+  },
+  "contentPattern": {
+    "structure": "one row per card: cell 1 image, cell 2 heading (h3/h4) + description paragraphs + indication links separated by line breaks; 3-column grid",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.myastrazeneca.ch/",
+        "instanceId": null,
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1
+  },
+  "options": [],
+  "memberVariantIds": ["cards-therapy"]
+}

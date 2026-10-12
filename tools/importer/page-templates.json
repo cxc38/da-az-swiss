@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.myastrazeneca.ch/"
+      ],
+      "representativeUrl": "https://www.myastrazeneca.ch/",
+      "description": "To be named in naming step",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [
+            ".teaser.teaser--home-hero"
+          ]
+        },
+        {
+          "name": "cards-therapy",
+          "instances": [
+            ".container--3-column-wrap"
+          ]
+        },
+        {
+          "name": "columns-teaser",
+          "instances": [
+            ".teaser.teaser--text-image"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "1",
+          "name": "Welcome hero",
+          "selector": [
+            ".aem-GridColumn:has(> .cmp-container > .teaser--home-hero)"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "2",
+          "name": "Intro, therapy areas and product information",
+          "selector": [
+            ".aem-GridColumn.container--fixed:not(.hidden):has(.container--3-column-wrap)",
+            ".aem-GridColumn.container--fixed:not(.hidden):has(.teaser--text-image)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-therapy",
+            "columns-teaser"
+          ],
+          "defaultContent": [
+            ".container--tb-space-md:first-child .cmp-text",
+            ".cmp-title h3"
+          ]
+        },
+        {
+          "id": "3",
+          "name": "Revision / job code",
+          "selector": [
+            ".aem-GridColumn:has(#vivo-id-wrap)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#vivo-id-wrap"
+          ]
+        }
+      ],
+      "urlPattern": "/"
+    },
+    {
+      "name": "wainzua",
+      "urls": [
+        "https://www.myastrazeneca.ch/it/startseite/produkte/wainzua/brochure.html"
+      ],
+      "representativeUrl": "https://www.myastrazeneca.ch/it/startseite/produkte/wainzua/brochure.html",
+      "description": "To be named in naming step",
+      "blocks": [],
+      "urlPattern": "/it/startseite/produkte/wainzua/*"
+    }
+  ]
+}
