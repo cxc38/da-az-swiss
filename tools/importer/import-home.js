@@ -62,7 +62,7 @@ const PAGE_TEMPLATE = {
       id: '3',
       name: 'Revision / job code',
       selector: ['.aem-GridColumn:has(#vivo-id-wrap)'],
-      style: null,
+      style: 'revision',
       blocks: [],
       defaultContent: ['#vivo-id-wrap'],
     },

@@ -195,8 +195,9 @@ var CustomImportScript = (() => {
       ]);
       const doc = payload && payload.document || element.ownerDocument;
       doc.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"], meta[property="og:image:url"]').forEach((meta) => {
-        const value = meta.getAttribute("content");
-        if (value) meta.setAttribute("content", value.replace(/^(https?:\/\/[^/]+)\/{2,}/, "$1/"));
+        const value = (meta.getAttribute("content") || "").replace(/^(https?:\/\/[^/]+)\/{2,}/, "$1/");
+        if (!value || /^(https?:\/\/[^/]+)?\/?$/.test(value)) meta.remove();
+        else meta.setAttribute("content", value);
       });
     }
     if (hookName === TransformHook.afterTransform) {
@@ -209,9 +210,17 @@ var CustomImportScript = (() => {
         "div.languagenavigation",
         // Breadcrumb (single "Startseite" item)
         "div.breadcrumb",
-        // Non-authorable leftovers: stylesheet links and hidden inputs (<input>, #identityLogoutURL)
+        // HCP login/account header column (wainzua brochure snapshot)
+        ".container--headerLogin",
+        // Signed-in like/share/save widget incl. its hidden "errorMessage" popup (wainzua brochure snapshot)
+        "div.socialFeatures",
+        // Non-authorable leftovers: stylesheet links, hidden inputs (<input>, #identityLogoutURL),
+        // and ./Brochure_files/ scripts/styles from the saved raw snapshot
         "link",
-        "input"
+        "input",
+        "script",
+        "style",
+        "noscript"
       ]);
     }
   }
@@ -316,7 +325,7 @@ var CustomImportScript = (() => {
         id: "3",
         name: "Revision / job code",
         selector: [".aem-GridColumn:has(#vivo-id-wrap)"],
-        style: null,
+        style: "revision",
         blocks: [],
         defaultContent: ["#vivo-id-wrap"]
       }

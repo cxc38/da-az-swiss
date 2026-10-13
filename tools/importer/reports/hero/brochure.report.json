@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.myastrazeneca.ch/it/startseite/produkte/wainzua/brochure.html",
+  "path": "hero/brochure",
+  "timestamp": "2026-10-12T15:05:27.900Z",
+  "title": "Brochure",
+  "template": "wainzua",
+  "blocks": [
+    "pdf-viewer-inline"
+  ]
+}
